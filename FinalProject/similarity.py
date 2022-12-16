@@ -22,21 +22,22 @@ for i in querylist:
     i = i.strip('\n')
     is_this_clu = 0 #紀錄狀態
     samecluster = [] #放跟query同一個cluster的
-    clusternumber = 1 #紀錄當下是第幾個cluster
+    cluster = 1 #紀錄當下是第幾個cluster
     
     #把同一群的抓出來
 
-    f2 = open('cluster/15.txt')
+    f2 = open('cluster/60.txt')
     lines = f2.readlines()
     for line in lines:
         samecluster.append(line)
-        if(i == line):
+        if(i == line.strip('\n')):
             is_this_clu = 1
-        elif(i == ''):
+        elif(line == '\n'):
             if(is_this_clu == 1):
                 break
             samecluster = []
-            cluster = cluster + 1    
+            cluster = cluster + 1  
+            #print(cluster)  
     f2.close
 
     #print(samecluster)
@@ -52,7 +53,7 @@ for i in querylist:
 
     #最後的結果
     pathnamea = i + '.txt'
-    fi = open('similarity_15/' + pathnamea,'a')
+    fi = open('similarity_60/' + pathnamea,'a')
     fi.write(str(i))
     fi.write('\n')
     fi.write('%-15s' % 'movie_id')

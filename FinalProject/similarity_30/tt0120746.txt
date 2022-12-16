@@ -1,0 +1,5 @@
+tt0120746
+movie_id       cosine_similarity   
+tt0107616      0.000000            
+tt0045152      0.035266            
+tt0120746      1.000127            
