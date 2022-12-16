@@ -26,7 +26,7 @@ for i in querylist:
     
     #把同一群的抓出來
 
-    f2 = open('5.txt')
+    f2 = open('cluster/15.txt')
     lines = f2.readlines()
     for line in lines:
         samecluster.append(line)
@@ -48,13 +48,11 @@ for i in querylist:
     indexb = []
     tfidfa = []
     tfidfb = []
-    a = 0
-    b = 0
-    cs = 0
+    
 
     #最後的結果
     pathnamea = i + '.txt'
-    fi = open('similarity/' + pathnamea,'a')
+    fi = open('similarity_15/' + pathnamea,'a')
     fi.write(str(i))
     fi.write('\n')
     fi.write('%-15s' % 'movie_id')
@@ -75,6 +73,9 @@ for i in querylist:
     for j in samecluster:
         indexb = []
         tfidfb = []
+        a = 0
+        b = 0
+        cs = 0
         j = j.strip('\n')
         if(j == ''):
             break
@@ -88,7 +89,7 @@ for i in querylist:
             tfidfb.append(s5.split()[1]) #doc2的tfidf
         f5.close
 
-        print(indexb)
+        #print(indexb)
 
         for k in range(numa+numb):
             if(a>=numa) or (b>=numb):
